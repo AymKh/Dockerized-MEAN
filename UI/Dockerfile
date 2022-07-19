@@ -11,5 +11,5 @@
     RUN rm -rf /usr/local/apache2/htdocs/*
     # Copy the built app to the apache container
     # make sure to change /app/dist/CORRECT_ANGULAR_PROJECT_NAME
-    COPY --from=fangular-container /app/dist/front /usr/local/apache2/htdocs/
+    COPY --from=angular-container /app/dist/front /usr/local/apache2/htdocs/
     EXPOSE 80
