@@ -1,0 +1,19 @@
+main{
+    max-width: 1024px;
+    height: auto;
+    margin: 0 auto;
+    
+    img{width: 100%;}
+
+    p{
+        text-align: justify;
+        width: 100%;
+    }
+
+    .mat-stepper-horizontal {
+        margin-top: 8px;
+    }
+    .mat-form-field {
+        margin-top: 16px;
+    }
+}

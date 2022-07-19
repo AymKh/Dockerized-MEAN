@@ -1,0 +1,20 @@
+#flex-container{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    mat-form-field{
+        width: 100%;
+        margin-right: 1rem;
+    }
+}
+
+#list{
+    padding: 1rem;
+    width: 500px;
+    height: auto;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+}

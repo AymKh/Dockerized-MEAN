@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUllStackAppConainerized</title>
+</head>
+<body>
+  <main>
+
+    <h1>This is a containerized full stack MEAN application</h1>
+
+    <mat-stepper #stepper>
+      <mat-step label="Terminology">
+        <section>
+          <h2>What is what</h2>
+          <img src="assets/dockerFileImageContainer.jpeg">
+          <ul>
+            <li>A Dockerfile is a recipe for creating Docker images</li>
+            <li>A Docker image gets built by running a Docker command (which uses that Dockerfile)</li>
+            <li>A Docker container is a running instance of a Docker image</li>
+          </ul>
+        </section>
+      </mat-step>
+
+      <mat-step label="Architecture">
+        <section>
+          <h2>How it works</h2>
+          <p>The project will have more than 1 <em>Dockerfile</em></p>
+          <p>Each file will be used to get the final and optzmized Docker images. NOte that in the Angular Dockerfile, multiple stages will be decalred, one for building the project and the other for serving it through either Apache or Nginx</p>
+          <img src="assets/architecture.png">
+          <p>Docker compose will be used to build the dockerfiles and group them into 1 network. We will also use it to specify a volume to be used by the MySQL container later on so the data aren't lost</p>
+    
+          <p>Once the images are built, we can start/stop them using either command line or Docker Desktop client.</p>
+        </section>
+      </mat-step>
+
+      <mat-step label="Demo Application">
+        <h2>Demo Application</h2>
+
+        <app-names></app-names>
+      </mat-step>
+    </mat-stepper>
+
+  </main>
+</body>
+</html>
