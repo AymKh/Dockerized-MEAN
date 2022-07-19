@@ -5,7 +5,7 @@
     COPY package*.json /usr/src/app
     RUN npm install
     COPY . /usr/src/app
-    EXPOSE 3000
+    EXPOSE $NODE_LOCAL_PORT
     
     # change this to whatever script u have, maybe pm2 
     CMD ["npm", "run", "dev"] 

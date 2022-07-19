@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  # FRONTEND
+  angular-front:
+    build: ./UI/
+    ports:
+      - "80:80"
+
+  # DB with volume to store data
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+    ports:
+      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+    volumes:
+      - db-mysql:/var/lib/mysql
+
+  # BACKEND
+  node-api:
+    depends_on:
+        - mysqldb
+    build: ./API/
+    ports:
+      - "3000:3000"
+
+  volumes:
+    db-mysql
