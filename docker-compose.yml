@@ -26,7 +26,7 @@ services:
         - mysqldb
     build: ./API/
     ports:
-      - "3000:3000"
+      - $NODE_LOCAL_PORT:$NODE_LOCAL_PORT
 
 volumes:
     db-mysql:

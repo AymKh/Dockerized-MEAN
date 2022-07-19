@@ -2,9 +2,9 @@
     FROM node:10
     RUN mkdir -p /usr/src/app
     WORKDIR /usr/src/app
-    COPY package*.json /usr/src/app
+    COPY package*.json .
     RUN npm install
-    COPY . /usr/src/app
+    COPY . .
     EXPOSE $NODE_LOCAL_PORT
     
     # change this to whatever script u have, maybe pm2 
