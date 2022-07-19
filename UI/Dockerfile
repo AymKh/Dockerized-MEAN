@@ -1,10 +1,10 @@
 # Node container to configure and build the project
-FROM node:16.10.0 as angular-container
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install --legacy-peer-deps
-COPY . .
-RUN node_modules/.bin/ng build --prod
+    FROM node:16.10.0 as angular-container
+    WORKDIR /app
+    COPY package*.json /app/
+    RUN npm install --legacy-peer-deps
+    COPY . .
+    RUN node_modules/.bin/ng build --prod
 
 # Apache container to run the built app
     FROM httpd:2.4
