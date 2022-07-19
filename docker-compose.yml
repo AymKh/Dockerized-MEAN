@@ -1,11 +1,15 @@
 version: '3'
 
+networks:
+    back:
 services:
   # FRONTEND
   angular-front:
     build: ./UI/
     ports:
       - "80:80"
+    networks:
+      - back
 
   # DB with volume to store data
   mysqldb:
@@ -17,6 +21,8 @@ services:
       - MYSQL_DATABASE=$MYSQLDB_DATABASE
     ports:
       - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+    networks:
+      - back
     volumes:
       - db-mysql:/var/lib/mysql
 
@@ -27,6 +33,8 @@ services:
     build: ./API/
     ports:
       - $NODE_LOCAL_PORT:$NODE_LOCAL_PORT
+    networks:
+      - back
 
 volumes:
     db-mysql:
