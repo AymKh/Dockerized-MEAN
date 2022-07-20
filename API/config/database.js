@@ -3,10 +3,11 @@ const util = require("util");
 
 const pool = mysql.createPool({
   connectionLimit: 100,
-  host: "localhost",
+  host: "mysqldb",
   user: "root",
-  password: "",
-  database: "users"
+  password: "123",
+  database: "users",
+  port: "3306"
 });
 
 const asyncPool = pool;
